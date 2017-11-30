@@ -12,4 +12,8 @@ export class ExplorerComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick (){
+    console.log('onClick')
+  }
+
 }

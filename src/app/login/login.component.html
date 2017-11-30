@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs"></div>
+  <div class="loginbox">
+    <form #loginform="ngForm" (ngSubmit)="onSubmit()">
+      <div class="flex-column mt-3">
+        <h5 class="text-center">Fabric Explorer</h5>
+        <div class="form-group pl-0">
+          <input type="text" name="username" [(ngModel)]="user.username" placeholder="Username" class="form-control" required>
+        </div>
+        <div class="form-group pl-0">
+          <input type="password" name="password" [(ngModel)]="user.password" placeholder="Password" class="form-control" required>
+        </div>
+        <!-- <div class="checkbox">
+          <input id="rememberme" type="checkbox">
+          <label for="rememberme">Remember me</label>
+        </div> -->
+        <button class="btn btn-primary" [disabled]="loginform.invalid">Login</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-xs"></div>
+</div>
