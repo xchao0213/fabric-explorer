@@ -7,8 +7,6 @@ import { IdentityService } from '../services/identity.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [IdentityService]
-
 })
 export class LoginComponent implements OnInit {
 
@@ -17,7 +15,7 @@ export class LoginComponent implements OnInit {
     password: ''
   }
 
-  constructor(private identityService: IdentityService<any>) { }
+  constructor(private identityService: IdentityService) { }
 
   ngOnInit() {
   }

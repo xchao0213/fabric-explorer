@@ -11,10 +11,16 @@ import { BlockComponent } from './block/block.component';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClient } from '@angular/common/http/src/client';
+import { HTTP_INTERCEPTORS } from '@angular/common/http'
+import { TokenInterceptor } from './services/token.interceptor'
 
 import { AlertService } from './services/alert.service';
+import { IdentityService } from './services/identity.service'
+
 import { LoginComponent } from './login/login.component';
-import { HeaderComponent } from './header/header.component'
+import { HeaderComponent } from './header/header.component';
+
+import { Config } from './config'
 
 const appRoutes: Routes = [
   {
@@ -43,16 +49,24 @@ const appRoutes: Routes = [
     BlockComponent,
     NotfoundComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     ClarityModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [AlertService],
+  providers: [
+    AlertService,
+    Config,
+    IdentityService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

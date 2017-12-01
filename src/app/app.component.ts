@@ -11,7 +11,6 @@ import { AlertService } from './services/alert.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [AlertService]
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'app';
