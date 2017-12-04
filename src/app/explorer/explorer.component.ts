@@ -31,9 +31,20 @@ export class ExplorerComponent implements OnInit {
     //   console.log(err);
     // });
 
-    this.chainServer.getChainCodes('mychannel').subscribe((res) => {
+    // this.chainServer.getChainCodes('mychannel').subscribe((res) => {
+    //   console.log(res)
+    // },(err) => {
+    //   console.log(err)
+    // })
+
+    // this.chainServer.getChainCode('fabcar','0').subscribe((res) => {
+    //   console.log(res)
+    // },(err) => {
+    //   console.log(err)
+    // })
+    this.chainServer.getChannel('mychannel').subscribe((res) => {
       console.log(res)
-    },(err) => {
+    }, (err) => {
       console.log(err)
     })
   }

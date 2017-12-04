@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClient, HttpHandler } from '@angular/common/http'
 
 import { ExplorerComponent } from './explorer.component';
+import { Config } from '../config'
+import { Conditional } from '@angular/compiler';
 
 describe('ExplorerComponent', () => {
   let component: ExplorerComponent;
@@ -8,7 +12,9 @@ describe('ExplorerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExplorerComponent ]
+      declarations: [ ExplorerComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [ HttpClient, HttpHandler, Config ]
     })
     .compileComponents();
   }));

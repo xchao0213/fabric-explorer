@@ -10,7 +10,7 @@ import { ExplorerComponent } from './explorer/explorer.component';
 import { BlockComponent } from './block/block.component';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { HttpClient } from '@angular/common/http/src/client';
+import { HttpClient } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import { TokenInterceptor } from './services/token.interceptor'
 

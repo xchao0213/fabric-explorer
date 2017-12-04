@@ -1,11 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
+import { HttpClient, HttpHandler } from '@angular/common/http'
 
 import { ChainService } from './chain.service';
+import { Config } from '../config'
 
 describe('ChainService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ChainService]
+      providers: [ChainService, HttpClient, HttpHandler, Config]
     });
   });
 
